@@ -85,7 +85,7 @@ var (
 					<div>
 					<h3 class="fw-bold mb-0 fs-4">Github</h3>
 					<br/>
-					<p> * golang install : <a href="https://github.com/hellices/shcWasmGo">https://github.com/hellices/shcWasmGo</a></p>
+					<p> * Github URL : <a href="https://github.com/hellices/shcWasmGo">https://github.com/hellices/shcWasmGo</a></p>
 					</div>
 				</div>
 				<br/>
