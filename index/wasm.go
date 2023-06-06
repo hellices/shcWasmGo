@@ -80,6 +80,7 @@ var (
 		<body>
 			<div class="container px-4 py-5" id="icon-grid">
 				<h2 class="pb-2 border-bottom">Demo</h2>
+				<br/>
 				<div class="col d-flex align-items-start">
 					<svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#home"/></svg>
 					<div>

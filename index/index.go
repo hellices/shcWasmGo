@@ -80,11 +80,12 @@ var (
 							<div class="p-5 mb-4 bg-light rounded-3">
 								<div class="container-fluid py-5">
 									<h1 class="display-20 fw-bold">WebAssembly And JavaScript</h1>
+									<br/>
 									<p class="col-md-10 fs-6"> 
 										* WebAssembly(WASM) 실제로 네이티브 코드를 웹에서 실행하게 해주는 도구 <br/><br/>
 										* 보통 브라우저 Runtime의 경우 (JavaScript와 같이) JavaScript 엔진 내에서 나란히 실행 <br/><br/>
 										* WASM은 JavaScript에 비해 빠르게 실행되는 구조로, 일반적으로 더 '빠르게' 실행 <br/><br/>
-											- 사유에 대한 이유는 다음을 참고 : <a href="https://hacks.mozilla.org/2017/02/what-makes-webassembly-fast/">What makes WebAssembly fast?</a>
+										&nbsp;&nbsp;&nbsp;- 참고 : <a href="https://hacks.mozilla.org/2017/02/what-makes-webassembly-fast/">What makes WebAssembly fast?</a>
 									</p>
 								</div>
 							</div>
@@ -98,6 +99,7 @@ var (
 									<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
 									<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
 									<script src="http://localhost:3000/dashboard.js"></script>
+									문서를 PDF로 변환하는 도구 - PSPDFKit의 벤치마킹 자료 <br/>
 									<a href="https://pspdfkit.com/blog/2018/a-real-world-webassembly-benchmark">https://pspdfkit.com/blog/2018/a-real-world-webassembly-benchmark</a>
 								</div>
 							</div>
@@ -108,6 +110,7 @@ var (
 								<div class="container-fluid py-5">
 									<h1 class="display-8 fw-bold">Movement for the New WebAssembly Standard, WASI</h1>
 									<br/>
+									Mozilla - 2019 / 3 / 27 발표자료 <br/>
 									<a href="https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/">Standardizing WASI: A system interface to run WebAssembly outside the web</a>	
 									<br/>
 								</div>
@@ -140,10 +143,11 @@ var (
 
 					<div class="col-md-6">
 						<div class="h-100 p-5 bg-light border rounded-3">
-							<h2>마무리..</h2>
+							<h2>Demo</h2>
+							<br/>
 							<p>Reference
 							<br/>
-								"2020년과 이후 JavaScript의 동향"
+								&nbsp;"2020년과 이후 JavaScript의 동향"
 								<br/>
 								- WebAssembly Naver D2 Blog <a href="https://d2.naver.com/helloworld/8257914">https://d2.naver.com/helloworld/8257914</a>
 							</p>
