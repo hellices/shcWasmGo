@@ -106,7 +106,7 @@ var (
 						<div class="carousel-item">
 							<div class="p-5 mb-4 bg-light rounded-3">
 								<div class="container-fluid py-5">
-									<h1 class="display-5 fw-bold">새로운 WebAssembly 표준을 위한 움직임, WASI</h1>
+									<h1 class="display-8 fw-bold">Movement for the New WebAssembly Standard, WASI</h1>
 									<br/>
 									<a href="https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/">Standardizing WASI: A system interface to run WebAssembly outside the web</a>	
 									<br/>
