@@ -11,26 +11,37 @@ var (
 		<meta name="generator" content="Jekyll v3.8.5">
 
 		<title>Example</title>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 			<style>
-			.bd-placeholder-img {
-				font-size: 1.125rem;
-				text-anchor: middle;
-				-webkit-user-select: none;
-				-moz-user-select: none;
-				-ms-user-select: none;
-				user-select: none;
-			}
-
-			@media (min-width: 768px) {
-				.bd-placeholder-img-lg {
-				font-size: 3.5rem;
+				.bd-placeholder-img {
+					font-size: 1.125rem;
+					text-anchor: middle;
+					-webkit-user-select: none;
+					-moz-user-select: none;
+					-ms-user-select: none;
+					user-select: none;
 				}
-			}
+
+				.carousel-control-next, .carousel-control-prev {
+					width: 5%;
+				}
+
+				.carousel-indicators {
+					margin-bottom: 2rem;
+				}
+
+				.container-fluid, .py-5 {
+					padding-left: calc(var(--bs-gutter-x) * .99)
+				}
+
+				@media (min-width: 768px) {
+					.bd-placeholder-img-lg {
+					font-size: 3.5rem;
+					}
+				}
 			</style>
-			<!-- Custom styles for this template -->
-		<link href="sticky-footer.css" rel="stylesheet">
 	</head>
 
 	<body class="d-flex flex-column h-100">
@@ -43,13 +54,37 @@ var (
 					</a>
 				</header>
 
-				<div class="p-5 mb-4 bg-light rounded-3">
-					<div class="container-fluid py-5">
-						<h1 class="display-5 fw-bold">What is WebAssembly?</h1>
-						<p class="col-md-8 fs-4">WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.</p>
-						<a href="https://webassembly.org/">
-						<button class="btn btn-primary btn-lg" type="button">Official Site</button>
-						</a>
+				<div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="false" data-bs-interval="false">
+
+					<div class="carousel-indicators">
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					</div>
+
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<div class="p-5 mb-4 bg-light rounded-3">
+								<div class="container-fluid py-5">
+									<h1 class="display-5 fw-bold">What is WebAssembly?</h1>
+									<p class="col-md-8 fs-4">WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.</p>
+									<a href="https://webassembly.org/">
+									<button class="btn btn-primary btn-lg" type="button">Official Site</button>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="carousel-item">
+						<div class="p-5 mb-4 bg-light rounded-3">
+							<div class="container-fluid py-5">
+								<h1 class="display-20 fw-bold">A Real-World WebAssembly Benchmark</h1>
+								<canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="3000" height="489" style="height: 500px; width: 1552px;">
+								<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+								<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+								
+							</div>
+						</div>
 					</div>
 				</div>
 
