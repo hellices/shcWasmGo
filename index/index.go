@@ -50,7 +50,7 @@ var (
 				<header class="pb-3 mb-4 border-bottom">
 					<a href="https://github.com/WebAssembly" class="d-flex align-items-center text-dark text-decoration-none">
                     <img src="https://www.vectorlogo.zone/logos/webassembly/webassembly-icon.svg" width="36" height="32" alt="WASM">
-					<span class="fs-4">&nbsp;Webassembly</span>
+					<span class="fs-4">&nbsp;WebAssembly</span>
 					</a>
 				</header>
 
