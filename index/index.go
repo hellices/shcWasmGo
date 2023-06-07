@@ -61,6 +61,7 @@ var (
 						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
 						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
 						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
 					</div>
 
 					<div class="carousel-inner">
@@ -113,6 +114,17 @@ var (
 									Mozilla - 2019 / 3 / 27 발표자료 <br/>
 									<a href="https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/">Standardizing WASI: A system interface to run WebAssembly outside the web</a>	
 									<br/>
+								</div>
+							</div>
+						</div>
+
+						<div class="carousel-item">
+							<div class="p-5 mb-4 bg-light rounded-3">
+							<h1 class="display-8 fw-bold">WebAssembly Pipeline</h1>
+								<div class="container-fluid py-5 d-flex justify-content-center">
+									<div>
+										<img src="https://cdn.jsdelivr.net/gh/b0xt/sobyte-images1/2023/03/28/2130b6d3eed84a34b97c6e43d63c2f5e.png" width="750" height="320" alt="Support">
+									</div>
 								</div>
 							</div>
 						</div>
