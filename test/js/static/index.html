@@ -1,0 +1,25 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WasmTest</title>
+
+  <!-- cd "$(go env GOROOT)/misc/wasm" golang에서 제공함. -->
+  <script src="./wasm_exec.js"></script>
+  <script>
+    const go = new Go();
+    WebAssembly.instantiateStreaming(fetch("http://localhost:50001/main.wasm"), go.importObject)
+            .then((wasmModule) => {
+              // 웹 어셈블리 로딩
+              go.run(wasmModule.instance);
+
+              // 웹 어셈블리에서 제공하는 add 함수 호출
+              console.log(wasmModule.instance.exports.add(3, 4));
+            }).catch(error => {
+              console.error(error)
+            });
+  </script>
+</head>
+<body></body>
+</html>
