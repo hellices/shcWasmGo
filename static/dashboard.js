@@ -59,7 +59,7 @@
           borderWidth: 1,
         },
         {
-          label: "JavaScript fallback",
+          label: "JavaScript",
           data: [4784, 4797, 6855, 5802],
           lineTension: 0,
           backgroundColor: "rgba(54, 162, 235, 0.2)",
