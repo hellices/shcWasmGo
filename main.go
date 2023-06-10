@@ -15,6 +15,10 @@ func init() {
 		url := r.URL.RequestURI()
 		var data []byte
 
+		if url == "/" {
+			url = url + "index"
+		}
+
 		switch {
 		case strings.Contains(url, "dashboard.js"):
 			w.Header().Set("Content-Type", "application/javascript")
@@ -27,7 +31,7 @@ func init() {
 			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc_test/static/demo_spin.html")
 			data, _ = ioutil.ReadAll(resp.Body)
 			w.Write([]byte(data))
-		case strings.Contains(url, "/"):
+		case strings.Contains(url, "/index"):
 			w.Header().Set("Content-Type", "text/html")
 			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc_test/static/index.html")
 			data, _ = ioutil.ReadAll(resp.Body)
