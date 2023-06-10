@@ -23,23 +23,23 @@ func init() {
 		case strings.Contains(url, "dashboard.js"):
 			w.Header().Set("Content-Type", "application/javascript")
 			// get from raw.githubusercontent
-			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc_test/static/dashboard.js")
+			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc/static/dashboard.js")
 			data, _ = ioutil.ReadAll(resp.Body)
 			w.Write([]byte(data))
 		case strings.Contains(url, "/demo/spin"):
 			w.Header().Set("Content-Type", "text/html")
-			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc_test/static/demo_spin.html")
+			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc/static/demo_spin.html")
 			data, _ = ioutil.ReadAll(resp.Body)
 			w.Write([]byte(data))
 		case strings.Contains(url, "/index"):
 			w.Header().Set("Content-Type", "text/html")
-			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc_test/static/index.html")
+			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc/static/index.html")
 			data, _ = ioutil.ReadAll(resp.Body)
 			w.Write([]byte(data))
 		default:
 			w.WriteHeader(404)
 			w.Header().Set("Content-Type", "text/html")
-			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc_test/static/404.html")
+			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc/static/404.html")
 			data, _ = ioutil.ReadAll(resp.Body)
 			w.Write([]byte(data))
 		}
