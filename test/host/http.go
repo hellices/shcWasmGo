@@ -9,6 +9,7 @@ import (
 func main() {
 	// GET 호출
 	resp, err := http.Get("https://google.com/robots.txt")
+
 	if err != nil {
 		panic(err)
 	}
@@ -20,5 +21,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("%s\n", string(data))
+
+	fmt.Println(string(data))
 }
