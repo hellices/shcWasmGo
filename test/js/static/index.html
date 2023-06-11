@@ -5,21 +5,28 @@
   <meta charset="UTF-8">
   <title>WasmTest</title>
 
-  <!-- cd "$(go env GOROOT)/misc/wasm" golang에서 제공함. -->
-  <script src="./wasm_exec.js"></script>
+    <!-- cd "$(go env GOROOT)/misc/wasm" golang에서 제공함. -->
+    <!-- cd  "$(tinygo env TINYGOROOT)/targets" tinygo에서 제공함. -->
+    <script src="./wasm_exec.js"></script>
+</head>
+<body>
+
   <script>
     const go = new Go();
-    WebAssembly.instantiateStreaming(fetch("http://localhost:50001/main.wasm"), go.importObject)
+    WebAssembly.instantiateStreaming(fetch("./main.wasm"), go.importObject)
             .then((wasmModule) => {
               // 웹 어셈블리 로딩
               go.run(wasmModule.instance);
 
-              // 웹 어셈블리에서 제공하는 add 함수 호출
-              console.log(wasmModule.instance.exports.add(3, 4));
+              let str = String.fromCharCode(wasmModule.instance.exports.sendTs()) 
+                        + String.fromCharCode(wasmModule.instance.exports.sendEs())
+                        + String.fromCharCode(wasmModule.instance.exports.sendSt())
+
+              document.getElementById("text").innerHTML = str
             }).catch(error => {
               console.error(error)
             });
   </script>
-</head>
-<body></body>
+  <div id="text" />
+</body>
 </html>
