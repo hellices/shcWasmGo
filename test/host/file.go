@@ -8,7 +8,7 @@ import (
 func main() {
 	data, err := ioutil.ReadFile("../static/404.html")
 
-	if(err != nil) {
+	if err != nil {
 		log.Panic(err)
 	}
 
