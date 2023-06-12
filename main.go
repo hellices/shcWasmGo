@@ -20,9 +20,9 @@ func init() {
 		}
 
 		switch {
-		case strings.Contains(url, "main.wasm"):
+		case strings.Contains(url, "web.wasm"):
 			w.Header().Set("Content-Type", "application/wasm")
-			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc/static/wasm/main.wasm")
+			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc/static/wasm/web.wasm")
 			data, _ = ioutil.ReadAll(resp.Body)
 			w.Write([]byte(data))
 

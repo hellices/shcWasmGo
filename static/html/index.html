@@ -63,6 +63,19 @@
 						console.error(error)
 					});
 			}
+
+			function wasmAlert() {
+				const go = new Go();
+				WebAssembly.instantiateStreaming(fetch("http://localhost:3000/web.wasm"), go.importObject)
+					.then((wasmModule) => {
+						// 웹 어셈블리 로딩
+						go.run(wasmModule.instance);
+		
+						wasmModule.instance.exports.alert()
+					}).catch(error => {
+						console.error(error)
+					});
+			}
 		</script>
 	</head>
 
@@ -115,25 +128,44 @@
 						</div>
 
 						<div class="carousel-item">
-							<div class="p-5 mb-4 rounded-3">
+							<div class="p-5 mb-4 rounded-3 d-flex justify-content-center">
 								<!-- <div style="margin-left: 5%;"> -->
-								<div class="col-md-6" style="margin-left: 3%;">
-									<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-										<div class="col p-4 d-flex flex-column position-static">
-										<strong class="d-inline-block mb-2 text-primary">WebAssembly For Js</strong>
-										<h2 class="mb-0">Test</h2>
-										<div class="mb-1 text-muted">문제</div>
-										<p class="card-text mb-auto">사진 속 차의 브랜드는 무엇일까요?</p>
-										<p class="card-text mb-auto">&nbsp;&nbsp;정답 : <div id="text"></div> </p>
-										<a href="javascript:answer()" 
-											id="answer"	
-											class="stretched-link">
-											<button class="btn btn-light" type="button">정답은?</button>
-										</a>
-										</div>
-										<div class="col-auto d-none d-lg-block">
-											<img src="https://media.autoexpress.co.uk/image/private/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1582030849/autoexpress/2020/02/p90382141_highres_bmw-x5-06-2018.jpg" width="200" height="100%" alt="WASM">
-										</div>
+								<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+									<div class="col p-4 d-flex flex-column position-static">
+									<strong class="d-inline-block mb-2 text-primary">WebAssembly For Js</strong>
+									<h2 class="mb-0">Test</h2>
+									<div class="mb-1 text-muted">문제</div>
+									<p class="card-text mb-auto">사진 속 차의 브랜드는 무엇일까요?</p>
+										<div style="display: flex;">&nbsp;&nbsp;정답 : &nbsp;<p id="text"></p></div><br/>
+									<a href="javascript:answer()" 
+										id="answer"	
+										class="stretched-link">
+										<button class="btn btn-light" type="button">정답은?</button>
+									</a>
+									</div>
+									<div class="col-auto d-none d-lg-block">
+										<img src="https://media.autoexpress.co.uk/image/private/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1582030849/autoexpress/2020/02/p90382141_highres_bmw-x5-06-2018.jpg" width="200" height="100%" alt="WASM">
+									</div>
+								</div>
+
+								<div>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								</div>
+
+								<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+									<div class="col p-4 d-flex flex-column position-static">
+									<strong class="d-inline-block mb-2 text-primary">WebAssembly For Js</strong>
+									<h2 class="mb-0">Test</h2>
+									<div class="mb-1 text-muted">BOM Test</div>
+									<a href="javascript:wasmAlert()" 
+										id="answer"	
+										class="stretched-link">
+										<button class="btn btn-light" type="button">Alert</button>
+									</a>
+									</div>
+									<div class="col-auto d-none d-lg-block">
+										<img src="https://media.autoexpress.co.uk/image/private/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1582030849/autoexpress/2020/02/p90382141_highres_bmw-x5-06-2018.jpg" width="200" height="100%" alt="WASM">
 									</div>
 								</div>
 							</div>
