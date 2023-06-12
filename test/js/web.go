@@ -2,9 +2,6 @@ package main
 
 // syscall/js 패키지는 타깃 아키텍처로 wasm을 사용할 때
 // Web Assembly 호스트 환경에 Javascript API에 대한 엑세스를 제공
-import (
-	"syscall/js"
-)
 
 func main() {
 	// 런타임에 표준 출력은 웹 브라우저 콘솔에 바인딩 되므로,
@@ -13,11 +10,11 @@ func main() {
 
 	// console := js.Global().Get("console.log")
 	// js.Global() 함수는 Javascript Global 네임스페이스에 엑세스
-	alert := js.Global().Get("alert")
+	// alert := js.Global().Get("alert")
 
 	// console.Invoke("data")
 	// alert 함수를 호출합니다.
-	alert.Invoke("Wasm 테스트 해보자~!")
+	// alert.Invoke("Wasm 테스트 해보자~!")
 
 }
 
@@ -31,18 +28,18 @@ func add(x int, y int) int {
 
 //export sendTs
 func sendTs() int {
-	ts := '테'
+	ts := 'B'
 	return int(ts)
 }
 
 //export sendEs
 func sendEs() int {
-	es := '스'
+	es := 'M'
 	return int(es)
 }
 
 //export sendSt
 func sendSt() int {
-	st := '트'
+	st := 'W'
 	return int(st)
 }
