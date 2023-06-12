@@ -20,26 +20,42 @@ func init() {
 		}
 
 		switch {
+		case strings.Contains(url, "main.wasm"):
+			w.Header().Set("Content-Type", "application/wasm")
+			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc/static/wasm/main.wasm")
+			data, _ = ioutil.ReadAll(resp.Body)
+			w.Write([]byte(data))
+
 		case strings.Contains(url, "dashboard.js"):
 			w.Header().Set("Content-Type", "application/javascript")
 			// get from raw.githubusercontent
-			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc/static/dashboard.js")
+			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc/static/js/dashboard.js")
 			data, _ = ioutil.ReadAll(resp.Body)
 			w.Write([]byte(data))
+
+		case strings.Contains(url, "wasm_exec.js"):
+			w.Header().Set("Content-Type", "application/javascript")
+			// get from raw.githubusercontent
+			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc/static/js/wasm_exec.js")
+			data, _ = ioutil.ReadAll(resp.Body)
+			w.Write([]byte(data))
+
 		case strings.Contains(url, "/demo/spin"):
 			w.Header().Set("Content-Type", "text/html")
-			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc/static/demo_spin.html")
+			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc/static/html/demo_spin.html")
 			data, _ = ioutil.ReadAll(resp.Body)
 			w.Write([]byte(data))
+
 		case strings.Contains(url, "/index"):
 			w.Header().Set("Content-Type", "text/html")
-			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc/static/index.html")
+			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc/static/html/index.html")
 			data, _ = ioutil.ReadAll(resp.Body)
 			w.Write([]byte(data))
+
 		default:
 			w.WriteHeader(404)
 			w.Header().Set("Content-Type", "text/html")
-			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc/static/404.html")
+			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc/static/html/404.html")
 			data, _ = ioutil.ReadAll(resp.Body)
 			w.Write([]byte(data))
 		}
