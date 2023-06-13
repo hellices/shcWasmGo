@@ -6,11 +6,11 @@ import (
 )
 
 func main() {
-	data, err := ioutil.ReadFile("../static/404.html")
+	data, err := ioutil.ReadFile("./Text")
 
 	if err != nil {
 		log.Panic(err)
 	}
 
-	log.Print(string(data))
+	log.Println("File Contents : ", string(data))
 }
