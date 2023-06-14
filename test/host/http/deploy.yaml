@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-http
+  labels:
+    app: go-http
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-http
+  template:
+    metadata:
+      labels:
+        app: go-http
+    spec:
+      containers:
+        - name: go-http
+          image: docker.io/mythdcom/go-http:0.0.1
+          ports:
+            - containerPort: 50001
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-http
+spec:
+  type: ClusterIP
+  ports:
+    - port: 50001
+      targetPort: 50001
+      name: http
+  selector:
+    app: go-http
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: go-http
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: go-http
+                port:
+                  number: 50001
+# k3d cluster create mycluster -p "9900:80@loadbalancer"
