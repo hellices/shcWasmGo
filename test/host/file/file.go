@@ -13,4 +13,5 @@ func main() {
 	}
 
 	log.Println("File Contents : ", string(data))
+	// tinygo build -target wasi -o main.wasm file.go
 }

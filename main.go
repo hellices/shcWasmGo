@@ -52,6 +52,12 @@ func init() {
 			data, _ = ioutil.ReadAll(resp.Body)
 			w.Write([]byte(data))
 
+		case strings.Contains(url, "/runtime"):
+			w.Header().Set("Content-Type", "text/html")
+			resp, _ := spinhttp.Get("https://raw.githubusercontent.com/hellices/shcWasmGo/poc/static/html/runtime.html")
+			data, _ = ioutil.ReadAll(resp.Body)
+			w.Write([]byte(data))
+
 		default:
 			w.WriteHeader(404)
 			w.Header().Set("Content-Type", "text/html")
